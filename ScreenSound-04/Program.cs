@@ -29,6 +29,19 @@ using (HttpClient client = new HttpClient())
         LinqFilter.FiltrarArtistasPorGeneroMusical(musicas, "rock");
 
         LinqFilter.FiltrarMusicasDeUmArtista(musicas, "Travis Scott");
+
+
+
+        var musicasPreferidasDoMatheus = new MusicasPreferidas("Matheus");
+        musicasPreferidasDoMatheus.AdicionarMusicasFavoritas(musicas[1]);
+        musicasPreferidasDoMatheus.AdicionarMusicasFavoritas(musicas[5]);
+        musicasPreferidasDoMatheus.AdicionarMusicasFavoritas(musicas[13]);
+        musicasPreferidasDoMatheus.AdicionarMusicasFavoritas(musicas[12]);
+        musicasPreferidasDoMatheus.AdicionarMusicasFavoritas(musicas[43]);
+
+        musicasPreferidasDoMatheus.ExibirMusicasFavoritas();
+
+        musicasPreferidasDoMatheus.GerarArquivoJson();
     }
     catch (Exception ex)
     {
